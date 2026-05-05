@@ -1,0 +1,20 @@
+data:
+  path: data/ev_market_2026.csv
+  target: price_usd
+
+model:
+  type: RandomForestRegressor
+  n_estimators: 200
+  max_depth: 10
+  random_state: 42
+
+training:
+  test_size: 0.2
+
+mlflow:
+  tracking_uri: file:./mlruns
+  experiment_name: ev-price-regression
+  registered_model_name: ev_price_regression_model
+
+artifacts:
+  model_path: model.pkl
